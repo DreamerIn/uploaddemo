@@ -1,20 +1,10 @@
-import React, {useState, useEffect } from 'react';
-import Pages from "./pages";
+import React from 'react';
+import Upload from './UploadComponent/upload';
 
-function App(){
-  const [user, setUser] = useState(null);
-  useEffect(() => {
-
-    fetch("https://gitconnected.com/v1/portfolio/dreamerin")
-    .then(res => res.json())
-    .then(user => setUser(user));
-  }, []);
-
-  if(!user){
-    return <div/>;
-  }
-
-  return <Pages user = {user}/>;
-}
+const App = () => {
+    return(
+        <Upload/>
+    );
+};
 
 export default App;
